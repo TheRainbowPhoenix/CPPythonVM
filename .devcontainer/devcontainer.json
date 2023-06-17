@@ -47,5 +47,8 @@
 				"llvm-vs-code-extensions.vscode-clangd"
 			]
 		}
+	},
+	"containerEnv": {
+	   "TMPDIR": "/home/dev/tmp/"
 	}
 }
