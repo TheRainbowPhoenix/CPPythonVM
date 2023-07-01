@@ -1,7 +1,8 @@
 #ifndef P_CLASS_H
 #define P_CLASS_H
+#define __IEEE_BIG_ENDIAN
 
-#include <string>
+// #include <string>
 
 class PClass {
 private:

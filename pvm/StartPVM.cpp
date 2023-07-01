@@ -1,48 +1,45 @@
 #include <sdk/os/debug.hpp>
 #include <sdk/os/lcd.hpp>
 #include <stddef.h>
+#include <string.h>
 
-void CPPAlertUser(const char *message) {
-  Debug_Printf(0, 10, 0, 0, "%s", message);
-  LCD_Refresh();
-}
+#include "./h/BytecodeParser.h"
+#include "./h/Map.h"
+#include "./h/Messages.h"
+#include "./h/PInteger.h"
+#include "./h/Reality.h"
 
-/*=========================================================================
- * FUNCTION:      KVM_Start
- * TYPE:          private operation
- * OVERVIEW:      Initialize everything.  This operation is called
- *                when the VM is launched.
- * INTERFACE:
- *   parameters:  command line parameters
- *   returns:     zero if everything went well, non-zero otherwise
- *=======================================================================*/
-
-int KVM_Start(int argc, char *argv[]) {
-  volatile int returnValue = 0; /* Needed to make compiler happy */
-
-  return returnValue;
-}
-
-/*=========================================================================
- * FUNCTION:      StartJVM
- * TYPE:          public global operation
- * OVERVIEW:      Boots up the virtual machine and executes 'main'.
- * INTERFACE:
- *   parameters:  command line arguments
- *   returns:     zero if everything went fine, non-zero otherwise.
- *=======================================================================*/
-
-int StartPVM(int argc, char *argv[]) {
+// int StartPVM(int argc, char *argv[]) {
+int StartPVM(uint8_t *bc) {
   volatile int returnValue = 0;
 
-  /* Ensure that we have a class to run */
-  if (argc <= 0 || argv[0] == NULL) {
-    CPPAlertUser("KVM_MSG_MUST_PROVIDE_CLASS_NAME");
-    return -1;
-  }
+  // CPPAlertUser("TODO: PVM_Start");
+  Reality::instantiate();
 
-  CPPAlertUser("TODO: PVM_Start");
+  PInteger *a = new PInteger(42);
+  int check = a->value() == 42 ? 10000 : 0;
+
+  Map<const char *, int> *myMap = new Map<const char *, int>();
+  myMap->insert("k1", 10);
+  myMap->insert("k2", 20);
+  myMap->insert("k3", 30);
+
+  check += (myMap->size() == 3 ? 1000 : 0);
+
+  check += (myMap->has_key("k2") ? 100 : 0);
+
+  myMap->remove("k1");
+
+  check += (myMap->has_key("k1") ? 0 : 10);
+
+  CPPrintNumber(check);
+
+  delete myMap;
+
+  // BytecodeParser parser(bc);
   // returnValue = KVM_Start(argc, argv);
   // KVM_Cleanup();
+
+  Reality::destroy();
   return returnValue;
 }

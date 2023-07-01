@@ -7,7 +7,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-#include "pvm/h/main.h"
+#include "pvm/h/StartPVM.h"
 
 /*
  * Fill this section in with some information about your app.
@@ -17,9 +17,6 @@ APP_NAME("Py VM")
 APP_DESCRIPTION("Little Py3 VM")
 APP_AUTHOR("PC")
 APP_VERSION("1.0.0")
-
-// long RequestedHeapSize;
-char *UserClassPath;
 
 extern "C" void main() {
   calcInit(); // backup screen and init some variables
@@ -144,12 +141,12 @@ extern "C" void main() {
         Debug_Printf(0, 1, false, 0, "Read %d bytes of class - OK", bytes_read);
 
         // RequestedHeapSize = DEFAULTHEAPSIZE;
-        UserClassPath = ".";
+        // UserClassPath = ".";
 
         char class_name[] = "HelloWorld";
         char *kvm_argv[1] = {class_name};
         int kvm_argc = 1;
-        StartPVM(kvm_argc, kvm_argv);
+        StartPVM(bc);
       }
     }
 
