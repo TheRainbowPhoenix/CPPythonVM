@@ -1,7 +1,7 @@
 {
     "configurations": [
         {
-            "name": "Linux",
+            "name": "Classpad",
             "includePath": [
                 "${workspaceFolder}/**",
                 "/opt/cross/hollyhock-2/sdk/include/**",
@@ -21,7 +21,40 @@
                 "-m4a-nofpu",
                 "-I $(SDK_DIR)/newlib/sh-elf/include/"
             ],
-            "configurationProvider": "ms-vscode.makefile-tools"
+            "browse": {
+                "limitSymbolsToIncludedHeaders": false,
+                "databaseFilename": "${workspaceFolder}/.vscode/db/browse.vc.db",
+                "path": [
+                    "${default}",
+                    "pvm",
+                    "/opt/cross/hollyhock-2/sdk/include/sdk",
+                    "/workspaces/CPJVM/pvm/VmCommon/h/",
+                    "/workspaces/CPJVM/pvm/VmSkel/h/",
+                    "/workspaces/CPJVM/pvm/VmExtra/h/"
+                ]
+            },
+            "configurationProvider": "ms-vscode.makefile-tools",
+            "cStandard": "c17",
+            "cppStandard": "gnu++14",
+            "intelliSenseMode": "linux-gcc-x64",
+            "mergeConfigurations": true
+        },
+        {
+            "name": "Native (debug)",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${default}"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE"
+            ],
+            "cStandard": "c17",
+            "cppStandard": "c++17",
+            "intelliSenseMode": "linux-gcc-x64",
+            "compilerPath": "/usr/bin/g++",
+            "compileCommands": "${workspaceFolder}/compile_commands.json"
         }
     ],
     "version": 4
