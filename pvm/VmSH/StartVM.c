@@ -21,13 +21,9 @@
  * Include files
  *=======================================================================*/
 
-#include <global.h>
-
 /*=========================================================================
  * Functions
  *=======================================================================*/
-
-
 
 /*=========================================================================
  * FUNCTION:      KVM_Cleanup
@@ -40,12 +36,12 @@
  *=======================================================================*/
 
 void KVM_Cleanup() {
-  FinalizeVM();
-//   FinalizeInlineCaching();
-//   FinalizeNativeCode();
-//   FinalizeJavaSystemClasses();
-//   FinalizeClassLoading();
-//   FinalizeMemoryManagement();
-//   DestroyROMImage();
-//   FinalizeHashtables();
+  // FinalizeVM();
+  //   FinalizeInlineCaching();
+  //   FinalizeNativeCode();
+  //   FinalizeJavaSystemClasses();
+  //   FinalizeClassLoading();
+  //   FinalizeMemoryManagement();
+  //   DestroyROMImage();
+  //   FinalizeHashtables();
 }
