@@ -15,8 +15,8 @@
  * Fill this section in with some information about your app.
  * All fields are optional - so if you don't need one, take it out.
  */
-APP_NAME("Java VM")
-APP_DESCRIPTION("A small JVM")
+APP_NAME("Py VM")
+APP_DESCRIPTION("Little Py3 VM")
 APP_AUTHOR("PC")
 APP_VERSION("1.0.0")
 
@@ -117,12 +117,12 @@ extern "C" void main()
 	LCD_Refresh();
 
 	fillScreen(color(0, 0, 0));
-	Debug_Printf(0, 0, false, 0, "Loading JVM Class");
+	Debug_Printf(0, 0, false, 0, "Loading Py Bytecode");
 	LCD_Refresh();
 
 	// Load class
 
-	char filename[] = "\\fls0\\jvm\\HelloWorld.class";
+	char filename[] = "\\fls0\\py\\hello.pyc";
 
 	int32_t class_file = open(filename, OPEN_READ);
 
