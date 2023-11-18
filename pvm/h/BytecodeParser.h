@@ -7,9 +7,11 @@ class BytecodeParser {
 
 private:
   uint8_t *bc;
+  int size;
 
 public:
-  BytecodeParser(uint8_t *bc) : bc(bc) {}
+  BytecodeParser(uint8_t *bc, int size) : bc(bc), size(size) {}
+  
 
   void *parse();
 };

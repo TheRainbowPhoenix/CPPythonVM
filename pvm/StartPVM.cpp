@@ -10,7 +10,7 @@
 #include "./h/Reality.h"
 
 // int StartPVM(int argc, char *argv[]) {
-int StartPVM(uint8_t *bc) {
+int StartPVM(uint8_t *bc, unsigned int size) {
   volatile int returnValue = 0;
 
   // CPPAlertUser("TODO: PVM_Start");
@@ -36,7 +36,9 @@ int StartPVM(uint8_t *bc) {
 
   delete myMap;
 
-  // BytecodeParser parser(bc);
+  BytecodeParser parser(bc, size);
+  parser.parse();
+
   // returnValue = KVM_Start(argc, argv);
   // KVM_Cleanup();
 

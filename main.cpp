@@ -146,7 +146,7 @@ extern "C" void main() {
         char class_name[] = "HelloWorld";
         char *kvm_argv[1] = {class_name};
         int kvm_argc = 1;
-        StartPVM(bc);
+        StartPVM(bc, class_file_stat.fileSize);
       }
     }
 
@@ -155,17 +155,17 @@ extern "C" void main() {
 
   LCD_Refresh();
 
-  float f_a = 3.14159f;
-  float f_b = 2.71828f;
-  float f_c = f_a + f_b;
-  float f_d = f_a - f_b;
-  float f_e = f_a * f_b;
-  float f_f = f_a / f_b;
+  // float f_a = 3.14159f;
+  // float f_b = 2.71828f;
+  // float f_c = f_a + f_b;
+  // float f_d = f_a - f_b;
+  // float f_e = f_a * f_b;
+  // float f_f = f_a / f_b;
 
-  Debug_Printf(0, 5, false, 0, "a + b = %f\n", f_c);
-  Debug_Printf(0, 6, false, 0, "a - b = %f\n", f_d);
-  Debug_Printf(0, 7, false, 0, "a * b = %f\n", f_e);
-  Debug_Printf(0, 8, false, 0, "a / b = %f\n", f_f);
+  // Debug_Printf(0, 5, false, 0, "a + b = %f\n", f_c);
+  // Debug_Printf(0, 6, false, 0, "a - b = %f\n", f_d);
+  // Debug_Printf(0, 7, false, 0, "a * b = %f\n", f_e);
+  // Debug_Printf(0, 8, false, 0, "a / b = %f\n", f_f);
 
   LCD_Refresh();
 
