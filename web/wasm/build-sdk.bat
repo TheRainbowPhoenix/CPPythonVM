@@ -1,0 +1,1 @@
+emcc -c web/wasm/sdk.cpp -o web/wasm/sdk.o -I web/wasm/include

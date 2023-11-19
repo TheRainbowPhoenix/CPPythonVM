@@ -1,3 +1,7 @@
+#ifdef EMSCRIPTEN
+#include <emscripten.h>
+#endif
+
 #include <appdef.hpp>
 #include <sdk/calc/calc.hpp>
 #include <sdk/os/debug.hpp>
@@ -114,7 +118,8 @@ extern "C" void main() {
 
   char filename[] = "\\fls0\\py\\hello.pyc";
 
-  int32_t class_file = open(filename, OPEN_READ);
+  // int32_t class_file = open(filename, OPEN_READ);
+  int32_t class_file = 0;
 
   if (class_file < 0) {
     Debug_Printf(0, 1, true, 0, "Can't load %s", filename);
@@ -166,6 +171,7 @@ extern "C" void main() {
 
   LCD_Refresh();
 
+  #ifndef EMSCRIPTEN
   // Example for getKey
   while (true) {
     uint32_t key1, key2;  // First create variables
@@ -176,6 +182,7 @@ extern "C" void main() {
       break;
     }
   }
+  #endif
 
   calcEnd(); // restore screen and do stuff
 }

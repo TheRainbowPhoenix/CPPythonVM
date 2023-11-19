@@ -1,3 +1,7 @@
 {
-    "C_Cpp.default.compilerPath": "/usr/local/bin/sh4-elf-g++"
+    "C_Cpp.default.compilerPath": "/usr/local/bin/sh4-elf-g++",
+    "livePreview.serverRoot": "./web/dist",
+    "livePreview.defaultPreviewPath": "./web/dist/preview.html",
+    "livePreview.previewDebounceDelay": 1000,
+    "livePreview.autoRefreshPreview": "On Changes to Saved Files"
 }

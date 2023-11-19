@@ -10,7 +10,9 @@
 	},
 
 	// Features to add to the dev container. More info: https://containers.dev/features.
-	// "features": {},
+	"features": {
+		"ghcr.io/ebaskoro/devcontainer-features/emscripten:1": {}
+	},
 
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [3000],
@@ -45,7 +47,8 @@
 			},
 			"extensions": [
 				"ms-vscode.makefile-tools",
-				"llvm-vs-code-extensions.vscode-clangd"
+				"llvm-vs-code-extensions.vscode-clangd",
+				"ms-vscode.live-server"
 			]
 		}
 	},

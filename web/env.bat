@@ -1,0 +1,1 @@
+call ..\..\..\..\Downloads\EMScripten\emsdk\emsdk_env.bat
