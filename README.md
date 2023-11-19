@@ -1,6 +1,15 @@
 # CP JVM
 A test that could become the next CP App Template
 
+## Build for the web
+
+```
+emcc -c web/wasm/sdk.cpp -o web/wasm/sdk.o -I web/wasm/include
+
+emmake make web
+```
+
+
 ## Usage
 First, fork this repo to work on your own :
 <a href="https://github.com/TheRainbowPhoenix/CPAppTemplate/fork">

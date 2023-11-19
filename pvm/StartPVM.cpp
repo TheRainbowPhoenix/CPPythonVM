@@ -16,6 +16,11 @@ int StartPVM(uint8_t *bc, unsigned int size) {
   // CPPAlertUser("TODO: PVM_Start");
   Reality::instantiate();
 
+  // TODO: Hunt for the bug that make the calc reboot in the following code
+  // (maybe myMap)
+
+  /*
+
   PInteger *a = new PInteger(42);
   int check = a->value() == 42 ? 10000 : 0;
 
@@ -35,6 +40,8 @@ int StartPVM(uint8_t *bc, unsigned int size) {
   CPPrintNumber(check);
 
   delete myMap;
+
+  */
 
   BytecodeParser parser(bc, size);
   parser.parse();
